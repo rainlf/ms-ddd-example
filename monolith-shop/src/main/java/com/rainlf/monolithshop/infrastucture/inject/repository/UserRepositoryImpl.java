@@ -31,6 +31,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User findById(Integer id) {
-        return userFactory.createUser(userPORepository.findById(id).orElse(null);
+        return userFactory.createUser(userPORepository.findById(id).orElse(null));
     }
 }
