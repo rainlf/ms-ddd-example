@@ -11,6 +11,8 @@
 
     <modules>
         <module>shop-user</module>
+        <module>shop-goods</module>
+        <module>shop-order</module>
     </modules>
 
 </project>

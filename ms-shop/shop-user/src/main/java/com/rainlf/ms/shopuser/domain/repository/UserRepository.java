@@ -11,4 +11,6 @@ public interface UserRepository {
     void saveUser(User user);
 
     User findByUsername(String username);
+
+    User findById(Integer id);
 }

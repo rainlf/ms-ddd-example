@@ -11,4 +11,6 @@ public interface UserAppService {
     void register(String username, String password);
 
     User login(String username, String password);
+
+    User findById(Integer userId);
 }

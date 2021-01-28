@@ -24,4 +24,9 @@ public class UserAppServiceImpl implements UserAppService {
     public User login(String username, String password) {
         return userService.login(username, password);
     }
+
+    @Override
+    public User findById(Integer userId) {
+        return userService.findById(userId);
+    }
 }
