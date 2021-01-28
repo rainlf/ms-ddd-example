@@ -28,4 +28,9 @@ public class UserRepositoryImpl implements UserRepository {
     public User findByUsername(String username) {
         return userFactory.createUser(userPORepository.findByUsername(username));
     }
+
+    @Override
+    public User findById(Integer id) {
+        return userFactory.createUser(userPORepository.findById(id).orElse(null);
+    }
 }

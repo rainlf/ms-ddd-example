@@ -5,6 +5,7 @@ import com.rainlf.monolithshop.application.service.GoodsAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,7 +19,7 @@ public class GoodsController {
     private GoodsAppService goodsAppService;
 
     @GetMapping("")
-    public WebResponse findGoods() {
-        return WebResponse.ok(goodsAppService.findGoods());
+    public WebResponse findGoods(@RequestParam("userId") Integer userId) {
+        return WebResponse.ok(goodsAppService.findGoods(userId));
     }
 }

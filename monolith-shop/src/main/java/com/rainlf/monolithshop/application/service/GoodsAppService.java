@@ -9,7 +9,7 @@ import java.util.List;
  * @date : 2021/1/27 19:48
  */
 public interface GoodsAppService {
-    List<Goods> findGoods();
+    List<Goods> findGoods(Integer userId);
 
     void saveGods(List<Goods> goodsList);
 }
