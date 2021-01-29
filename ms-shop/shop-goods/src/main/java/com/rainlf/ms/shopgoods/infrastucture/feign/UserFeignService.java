@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author : rain
  * @date : 2021/1/28 20:17
  */
-@FeignClient(value = "SHOP-USER", fallback = UserFeignServiceFallback.class)
+@FeignClient(value = "SHOP-USER", path = "/user", fallback = UserFeignServiceFallback.class)
 public interface UserFeignService {
 
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     WebResponse findById(@PathVariable("id") Integer id);
 }
