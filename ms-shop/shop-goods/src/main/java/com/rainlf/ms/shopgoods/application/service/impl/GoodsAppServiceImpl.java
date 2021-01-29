@@ -1,9 +1,9 @@
 package com.rainlf.ms.shopgoods.application.service.impl;
 
 import com.rainlf.ms.shopgoods.application.dto.User;
-import com.rainlf.ms.shopgoods.application.facade.UserService;
+import com.rainlf.ms.shopgoods.application.gateway.UserService;
 import com.rainlf.ms.shopgoods.application.service.GoodsAppService;
-import com.rainlf.ms.shopgoods.domain.model.Goods;
+import com.rainlf.ms.shopgoods.domain.entity.Goods;
 import com.rainlf.ms.shopgoods.domain.service.GoodsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

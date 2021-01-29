@@ -1,8 +1,8 @@
 package com.rainlf.ms.shoporder.application.service;
 
 
-import com.rainlf.ms.shoporder.domain.model.Order;
-import com.rainlf.ms.shoporder.domain.model.valueobject.Detail;
+import com.rainlf.ms.shoporder.domain.entity.Order;
+import com.rainlf.ms.shoporder.domain.entity.valueobject.Detail;
 
 import java.util.List;
 

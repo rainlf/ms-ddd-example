@@ -1,6 +1,6 @@
 package com.rainlf.ms.shopgoods.infrastucture.dao.factory;
 
-import com.rainlf.ms.shopgoods.domain.model.Goods;
+import com.rainlf.ms.shopgoods.domain.entity.Goods;
 import com.rainlf.ms.shopgoods.infrastucture.dao.entity.GoodsPO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;

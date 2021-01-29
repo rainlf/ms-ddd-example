@@ -1,9 +1,9 @@
 package com.rainlf.ms.shoporder.infrastucture.dao.factory;
 
 
-import com.rainlf.ms.shoporder.domain.model.Order;
-import com.rainlf.ms.shoporder.domain.model.valueobject.Detail;
-import com.rainlf.ms.shoporder.domain.model.valueobject.Status;
+import com.rainlf.ms.shoporder.domain.entity.Order;
+import com.rainlf.ms.shoporder.domain.entity.valueobject.Detail;
+import com.rainlf.ms.shoporder.domain.entity.valueobject.Status;
 import com.rainlf.ms.shoporder.infrastucture.dao.entity.OrderPO;
 import com.rainlf.ms.shoporder.infrastucture.util.JsonUtils;
 import org.springframework.beans.BeanUtils;

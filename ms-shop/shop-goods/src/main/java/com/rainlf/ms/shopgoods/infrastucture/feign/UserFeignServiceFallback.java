@@ -1,6 +1,6 @@
 package com.rainlf.ms.shopgoods.infrastucture.feign;
 
-import com.rainlf.ms.shopgoods.adapter.web.dto.WebResponse;
+import com.rainlf.ms.shopgoods.adapter.dto.WebResponse;
 
 /**
  * @author : rain

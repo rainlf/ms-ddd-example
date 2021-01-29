@@ -2,7 +2,7 @@ package com.rainlf.ms.shopgoods.application.scheduler;
 
 import com.google.common.collect.Lists;
 import com.rainlf.ms.shopgoods.application.service.GoodsAppService;
-import com.rainlf.ms.shopgoods.domain.model.Goods;
+import com.rainlf.ms.shopgoods.domain.entity.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

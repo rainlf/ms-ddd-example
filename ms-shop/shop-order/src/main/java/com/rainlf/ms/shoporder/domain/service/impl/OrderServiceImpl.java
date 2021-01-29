@@ -1,9 +1,9 @@
 package com.rainlf.ms.shoporder.domain.service.impl;
 
-import com.rainlf.ms.shoporder.domain.facade.PaymentService;
-import com.rainlf.ms.shoporder.domain.model.Order;
-import com.rainlf.ms.shoporder.domain.model.valueobject.Detail;
-import com.rainlf.ms.shoporder.domain.model.valueobject.Status;
+import com.rainlf.ms.shoporder.domain.gateway.PaymentService;
+import com.rainlf.ms.shoporder.domain.entity.Order;
+import com.rainlf.ms.shoporder.domain.entity.valueobject.Detail;
+import com.rainlf.ms.shoporder.domain.entity.valueobject.Status;
 import com.rainlf.ms.shoporder.domain.repository.OrderRepository;
 import com.rainlf.ms.shoporder.domain.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

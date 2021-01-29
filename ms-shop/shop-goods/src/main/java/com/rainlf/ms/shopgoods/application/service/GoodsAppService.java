@@ -1,7 +1,7 @@
 package com.rainlf.ms.shopgoods.application.service;
 
 
-import com.rainlf.ms.shopgoods.domain.model.Goods;
+import com.rainlf.ms.shopgoods.domain.entity.Goods;
 
 import java.util.List;
 

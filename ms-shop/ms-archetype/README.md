@@ -34,6 +34,7 @@
     ├─config            存放通用配置相关代码
     ├─dao               数据库访问相关代码
     │  ├─entity         存放持久层对象PO，和数据库库表一一对应
+    │  ├─factory        工厂相关代码，实现DO与PO的相互转换
     │  └─mapper         Mybatis Mapper 接口
     ├─gatewayimpl       网关接口实现
     ├─message           存放消息队列相关代码

@@ -1,7 +1,7 @@
 package com.rainlf.ms.shoporder.domain.repository;
 
 
-import com.rainlf.ms.shoporder.domain.model.Order;
+import com.rainlf.ms.shoporder.domain.entity.Order;
 
 import java.util.List;
 

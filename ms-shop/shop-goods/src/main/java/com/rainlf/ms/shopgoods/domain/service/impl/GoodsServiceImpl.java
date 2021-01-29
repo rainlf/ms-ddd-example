@@ -1,7 +1,7 @@
 package com.rainlf.ms.shopgoods.domain.service.impl;
 
 import com.google.common.collect.Lists;
-import com.rainlf.ms.shopgoods.domain.model.Goods;
+import com.rainlf.ms.shopgoods.domain.entity.Goods;
 import com.rainlf.ms.shopgoods.domain.repository.GoodsRepository;
 import com.rainlf.ms.shopgoods.domain.service.GoodsService;
 import lombok.extern.slf4j.Slf4j;

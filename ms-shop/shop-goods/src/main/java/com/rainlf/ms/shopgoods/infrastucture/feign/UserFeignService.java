@@ -1,6 +1,6 @@
 package com.rainlf.ms.shopgoods.infrastucture.feign;
 
-import com.rainlf.ms.shopgoods.adapter.web.dto.WebResponse;
+import com.rainlf.ms.shopgoods.adapter.dto.WebResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
