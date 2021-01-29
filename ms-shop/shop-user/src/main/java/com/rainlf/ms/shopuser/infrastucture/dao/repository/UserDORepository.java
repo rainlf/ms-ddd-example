@@ -1,6 +1,6 @@
 package com.rainlf.ms.shopuser.infrastucture.dao.repository;
 
-import com.rainlf.ms.shopuser.infrastucture.dao.entity.UserPO;
+import com.rainlf.ms.shopuser.infrastucture.dao.model.UserDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * @date : 2021/1/27 19:01
  */
 @Repository
-public interface UserPORepository extends JpaRepository<UserPO, Integer> {
-    UserPO findByUsername(String username);
+public interface UserDORepository extends JpaRepository<UserDO, Integer> {
+    UserDO findByUsername(String username);
 }

@@ -2,8 +2,8 @@ package com.rainlf.ms.shoporder.infrastucture.repositoryimpl;
 
 import com.rainlf.ms.shoporder.domain.entity.Order;
 import com.rainlf.ms.shoporder.domain.repository.OrderRepository;
-import com.rainlf.ms.shoporder.infrastucture.dao.factory.OrderFactory;
-import com.rainlf.ms.shoporder.infrastucture.dao.repository.OrderPORepository;
+import com.rainlf.ms.shoporder.infrastucture.dao.convertor.OrderConvertor;
+import com.rainlf.ms.shoporder.infrastucture.dao.repository.OrderDORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,23 +17,23 @@ import java.util.stream.Collectors;
 @Service
 public class OrderRepositoryImpl implements OrderRepository {
     @Autowired
-    private OrderPORepository orderPORepository;
+    private OrderDORepository orderDORepository;
 
     @Autowired
-    private OrderFactory orderFactory;
+    private OrderConvertor orderConvertor;
 
     @Override
     public void saveOrder(Order order) {
-        orderPORepository.save(orderFactory.createOrderPO(order));
+        orderDORepository.save(orderConvertor.createOrderPO(order));
     }
 
     @Override
     public List<Order> findByUserId(Integer userId) {
-        return orderPORepository.findByUserId(userId).stream().map(orderFactory::createOrder).collect(Collectors.toList());
+        return orderDORepository.findByUserId(userId).stream().map(orderConvertor::createOrder).collect(Collectors.toList());
     }
 
     @Override
     public Order findById(Integer id) {
-        return orderFactory.createOrder(orderPORepository.findById(id).orElse(null));
+        return orderConvertor.createOrder(orderDORepository.findById(id).orElse(null));
     }
 }

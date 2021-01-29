@@ -4,4 +4,4 @@
  */
 package com.rainlf.ms.msarchetype.adapter.web.assembler;
 
-// PC端 assembler, 实现DTO与DO的转换
+// PC端 assembler, 实现DTO与Entity的转换

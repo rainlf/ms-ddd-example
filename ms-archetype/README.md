@@ -9,11 +9,11 @@
 ```
 ├─adapter               Adapter层
 │  ├─mobile             移动端
-│  │  ├─assembler       移动端 assembler, 实现DTO与DO的转换
+│  │  ├─assembler       移动端 assembler, 实现DTO与Entity的转换
 │  │  ├─dto             移动端DTO, 前端应用数据的传输载体，不实现任何业务逻辑
 │  │  └─facade          移动端对外接口，封装应用服务，提供粗粒度的调用接口；或将用户请求委派给一个或多个应用服务
 │  └─web                PC端
-│      ├─assembler      PC端 assembler, 实现DTO与DO的转换
+│      ├─assembler      PC端 assembler, 实现DTO与Entity的转换
 │      ├─dto            PC端DTO, 前端应用数据的传输载体，不实现任何业务逻辑
 │      └─facade         PC端对外接口，封装应用服务，提供粗粒度的调用接口；或将用户请求委派给一个或多个应用服务
 ├─application           Application层
@@ -33,8 +33,8 @@
 └─infrastucture         Infrastructure层
     ├─config            存放通用配置相关代码
     ├─dao               数据库访问相关代码
-    │  ├─entity         存放持久层对象PO，和数据库库表一一对应
-    │  ├─factory        工厂相关代码，实现DO与PO的相互转换
+    │  ├─entity         存放持久层对象DO，和数据库库表一一对应
+    │  ├─factory        工厂相关代码，实现Entity与DO的相互转换
     │  └─mapper         Mybatis Mapper 接口
     ├─gatewayimpl       网关接口实现
     ├─message           存放消息队列相关代码

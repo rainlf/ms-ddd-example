@@ -17,6 +17,9 @@ public class UserController {
     @Autowired
     private UserAppService userAppService;
 
+    @Autowired
+    UserAssembler userAssembler;
+
     @PostMapping("/register")
     public WebResponse register(@RequestParam("username") String username, @RequestParam("password") String password) {
         userAppService.register(username, password);
@@ -31,6 +34,6 @@ public class UserController {
 
     @GetMapping("/{id}")
     public WebResponse findById(@PathVariable("id") Integer id) {
-        return WebResponse.ok(UserAssembler.toUserDTO(userAppService.findById(id)));
+        return WebResponse.ok(userAssembler.toUserDTO(userAppService.findById(id)));
     }
 }

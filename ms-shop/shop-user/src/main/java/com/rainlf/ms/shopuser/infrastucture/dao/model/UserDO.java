@@ -1,4 +1,4 @@
-package com.rainlf.ms.shopuser.infrastucture.dao.entity;
+package com.rainlf.ms.shopuser.infrastucture.dao.model;
 
 import lombok.Data;
 
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "shop_user")
-public class UserPO {
+public class UserDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

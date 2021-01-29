@@ -4,4 +4,4 @@
  */
 package com.rainlf.ms.msarchetype.adapter.mobile.assembler;
 
-// 移动端 assembler, 实现DTO与DO的转换
+// 移动端 assembler, 实现DTO与Entity的转换

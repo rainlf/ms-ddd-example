@@ -1,4 +1,4 @@
-package com.rainlf.ms.shoporder.infrastucture.dao.entity;
+package com.rainlf.ms.shoporder.infrastucture.dao.model;
 
 import lombok.Data;
 
@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "shop_order")
-public class OrderPO {
+public class OrderDO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

@@ -19,15 +19,18 @@ public class OrderController {
     @Autowired
     private OrderAppService orderAppService;
 
+    @Autowired
+    private OrderAssembler orderAssembler;
+
     @PostMapping("")
     public WebResponse createOrder(@RequestBody OrderDTO orderDTO) {
-        orderAppService.createOrder(orderDTO.getUserId(), OrderAssembler.toDetail(orderDTO.getDetailList()));
+        orderAppService.createOrder(orderDTO.getUserId(), orderAssembler.toDetail(orderDTO.getDetailList()));
         return WebResponse.ok("create order success");
     }
 
     @GetMapping("")
     public WebResponse findOrderByUserId(@RequestParam("userId") Integer userId) {
-        return WebResponse.ok(orderAppService.findByUserId(userId).stream().map(OrderAssembler::orderDTO).collect(Collectors.toList()));
+        return WebResponse.ok(orderAppService.findByUserId(userId).stream().map(orderAssembler::orderDTO).collect(Collectors.toList()));
     }
 
     @PostMapping("/pay")

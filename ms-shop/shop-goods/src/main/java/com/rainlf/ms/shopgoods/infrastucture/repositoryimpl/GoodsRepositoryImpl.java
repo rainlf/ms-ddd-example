@@ -2,8 +2,8 @@ package com.rainlf.ms.shopgoods.infrastucture.repositoryimpl;
 
 import com.rainlf.ms.shopgoods.domain.entity.Goods;
 import com.rainlf.ms.shopgoods.domain.repository.GoodsRepository;
-import com.rainlf.ms.shopgoods.infrastucture.dao.factory.GoodsFactory;
-import com.rainlf.ms.shopgoods.infrastucture.dao.repository.GoodsPORepository;
+import com.rainlf.ms.shopgoods.infrastucture.dao.convertor.GoodsConvertor;
+import com.rainlf.ms.shopgoods.infrastucture.dao.repository.GoodsDORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,33 +17,33 @@ import java.util.stream.Collectors;
 @Service
 public class GoodsRepositoryImpl implements GoodsRepository {
     @Autowired
-    private GoodsPORepository goodsPORepository;
+    private GoodsDORepository goodsDORepository;
 
     @Autowired
-    private GoodsFactory goodsFactory;
+    private GoodsConvertor goodsConvertor;
 
     @Override
     public List<Goods> findGoods() {
-        return goodsPORepository.findAll().stream().map(goodsFactory::createGoods).collect(Collectors.toList());
+        return goodsDORepository.findAll().stream().map(goodsConvertor::createGoods).collect(Collectors.toList());
     }
 
     @Override
     public Goods findById(Integer id) {
-        return goodsFactory.createGoods(goodsPORepository.findById(id).orElse(null));
+        return goodsConvertor.createGoods(goodsDORepository.findById(id).orElse(null));
     }
 
     @Override
     public void addInventory(Integer id, Integer inventory) {
-        goodsPORepository.addInventory(id, inventory);
+        goodsDORepository.addInventory(id, inventory);
     }
 
     @Override
     public void subtractInventory(Integer id, Integer inventory) {
-        goodsPORepository.subtractInventory(id, inventory);
+        goodsDORepository.subtractInventory(id, inventory);
     }
 
     @Override
     public void saveGoods(List<Goods> goodsList) {
-        goodsPORepository.saveAll(goodsList.stream().map(x -> goodsFactory.createGoodsPO(x)).collect(Collectors.toList()));
+        goodsDORepository.saveAll(goodsList.stream().map(x -> goodsConvertor.createGoodsPO(x)).collect(Collectors.toList()));
     }
 }

@@ -2,8 +2,8 @@ package com.rainlf.ms.shopuser.infrastucture.repositoryimpl;
 
 import com.rainlf.ms.shopuser.domain.entity.User;
 import com.rainlf.ms.shopuser.domain.repository.UserRepository;
-import com.rainlf.ms.shopuser.infrastucture.dao.factory.UserFactory;
-import com.rainlf.ms.shopuser.infrastucture.dao.repository.UserPORepository;
+import com.rainlf.ms.shopuser.infrastucture.dao.convertor.UserConvertor;
+import com.rainlf.ms.shopuser.infrastucture.dao.repository.UserDORepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,23 +14,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserRepositoryImpl implements UserRepository {
     @Autowired
-    private UserPORepository userPORepository;
+    private UserDORepository userDORepository;
 
     @Autowired
-    private UserFactory userFactory;
+    private UserConvertor userConvertor;
 
     @Override
     public void saveUser(User user) {
-        userPORepository.save(userFactory.createUserPO(user));
+        userDORepository.save(userConvertor.createUserPO(user));
     }
 
     @Override
     public User findByUsername(String username) {
-        return userFactory.createUser(userPORepository.findByUsername(username));
+        return userConvertor.createUser(userDORepository.findByUsername(username));
     }
 
     @Override
     public User findById(Integer id) {
-        return userFactory.createUser(userPORepository.findById(id).orElse(null));
+        return userConvertor.createUser(userDORepository.findById(id).orElse(null));
     }
 }
