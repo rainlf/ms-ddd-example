@@ -1,33 +1,38 @@
-# Monolith Shop
+# Micro Service Shop
 
-## Business Flow
+## Module
+- shop-user
+- shop-goods
+- shop-order
+
+## Service RelationShip
 ![](./images/1.png)
 
-## Service Relationship
+## Communication
 ![](./images/2.png)
 
 ## API
-### User
+### shop-user
 - register
 ```shell
-curl --location --request POST 'localhost:8080/user/register?username=rain&password=rain' \
+curl --location --request POST 'localhost:2001/user/register?username=rain&password=rain' \
 --data-raw ''
 ```
 - login
 ```shell
-localhost:8080/user/login?username=rain&password=rain
+localhost:2001/user/login?username=rain&password=rain
 ```
 
-### Goods
+### shop-goods
 - get goods
 ```shell
-curl --location --request GET 'localhost:8080/goods'
+curl --location --request GET 'localhost:2002/goods'
 ```
 
-### Order
+### shop-order
 - create order
 ```shell
-curl --location --request POST 'localhost:8080/order' \
+curl --location --request POST 'localhost:2003/order' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "userId": 1,
@@ -50,10 +55,10 @@ curl --location --request POST 'localhost:8080/order' \
 
 - get user's orders
 ```shell
-curl --location --request GET 'localhost:8080/order?userId=1'
+curl --location --request GET 'localhost:2003/order?userId=1'
 ```
 
 - pay for order
 ```shell
-curl --location --request POST 'localhost:8080/order/pay?orderId=1'
+curl --location --request POST 'localhost:2003/order/pay?orderId=1'
 ```
