@@ -84,7 +84,7 @@ Infrastructure层为对以上所有层的依赖，例如数据访问，Cache管�
 │  ├─repository         领域层仓储接口，存放领域层所需的持久化接口
 │  └─service            领域服务实现
 │      └─impl           领域服务接口，存放领域服务、工厂服务等代码；一个领域服务是由多个实体组合出来的一段业务逻辑；领域服务用来封装多个实体或方法提供上层应用服务的调用
-└─infrastucture         Infrastructure层
+└─infrastructure         Infrastructure层
     ├─config            存放通用配置相关代码
     ├─dao               数据库访问相关代码
     │  ├─entity         存放持久层对象DO，和数据库库表一一对应
