@@ -229,8 +229,3 @@ public class PaymentServiceImpl implements PaymentService {
 }
 ```
 
-## 微服务
-
-## 分布式事务
-
-## 租赁式数据库
